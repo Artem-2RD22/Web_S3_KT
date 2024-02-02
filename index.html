@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Слуцкий А.А. - Компонент для коменнтариев</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+
+<body>
+    <h1>Оставить комментарий</h1>
+    <template id="comment-template">
+        <li class="comment-item" style="max-width:600px;">
+            <div class="hr"><hr></div>
+            <div class="comment-header">
+                <div class="comment-name"></div>
+            </div>
+            <div class="comment-content"></div>
+            <div class="comment-actions">
+                <span class="upvotes"></span> <a href="#" role="button" class="upvote-button">👍</a>
+                <span class="downvotes"></span> <a href="#" role="button" class="downvote-button">👎</a>
+                <a href="#" role="button" class="reply-button">Ответить</a>
+                <a href="#" role="button" class="delete-button">Удалить</a>
+            </div>
+            <ul class="child-comments"></ul>
+        </li>
+    </template>
+    <template id="reply-input-template">
+        <li class="input-item">
+            <div class="comment-input-row">
+                <div>
+                    <input type="text" placeholder="Имя" class="name" />
+                </div>
+            </div>
+            <div>
+                <textarea rows="5" minlength="1" class="comment-box" placeholder="Ваш комментарий..."></textarea>
+                <div>
+                    <button class="add-btn">Отправить</button>
+                </div>
+            </div>
+        </li>
+    </template>
+    <div>
+        <div style="display:flex;margin-bottom:10px;">
+            <div>
+                <input type="text" placeholder="Имя" id="name" class="name" />
+            </div>
+        </div>
+        <div>
+            <textarea rows="5" id="comment" class="comment-box" placeholder="Ваш комментарий..."></textarea>
+            <div>
+                <button id="add-comment" class="add-btn">Отправить</button>
+            </div>
+        </div>
+        <h3>Комментарии:</h3>
+        <comment-box></comment-box>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
